@@ -14,6 +14,8 @@ body {
 
 .encabezado {
   display: flex;
+  padding-top: 1.5vh;
+  padding-right: 1vh;
   padding-bottom: 1vh;
   justify-content: space-between;
   align-items: center;
@@ -969,3 +971,4 @@ body {
   font-size: 1.4vh;
   margin-top: 1.5vh;
 }
+
