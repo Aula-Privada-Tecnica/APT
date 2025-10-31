@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: tahoma, sans-serif;
+    background-color: #051020; /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+      background-attachment: fixed;
+  background-size: cover;
+  background-position: center;   -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;
+}
+
+.contenedor-anuncio {
+    background-color: #102030; /* Un tono un poco más claro que el fondo */
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.4); /* Sombra azul para destacar */
+    border: 1px solid #007bff;
+}
+
+.titulo-anuncio {
+    font-size: 2.8vh;
+    margin-bottom: 20px;
+    border-bottom: 2px solid goldenrod;
+    padding-bottom: 10px;
+}
+
+.mensaje-principal, .mensaje-fecha, .mensaje-final {
+    font-size: 1.8vh;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.fecha-destacada {
+    font-size: 1.5vh;
+    font-weight: bold;
+    color: goldenrod; /* Color de acento */
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+.boton-regreso {
+    background-color: #007bff; /* Azul para el botón */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.8vh;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-regreso:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
