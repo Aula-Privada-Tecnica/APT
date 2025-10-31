@@ -175,24 +175,26 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+
 function limpiarBuscador() {
-    
     const inputBuscador = document.querySelector('.input-busqueda');
-    
     if (inputBuscador) {
         inputBuscador.value = "";
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {   
 
-    limpiarBuscador(); 
+document.addEventListener('DOMContentLoaded', function() {   
+
+    configurarModal7Pilares(); 
+    
+    limpiarBuscador();
 
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             limpiarBuscador();
         }
     });
-
-    configurarModal7Pilares();
+    
 });
+
