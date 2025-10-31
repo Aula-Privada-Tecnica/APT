@@ -184,7 +184,7 @@ function limpiarBuscador() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {   
+document.addEventListener('DOMContentLoaded', function() {
 
     configurarModal7Pilares(); 
     
@@ -197,4 +197,5 @@ document.addEventListener('DOMContentLoaded', function() {  
     });
     
 });
+
 
