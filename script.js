@@ -106,7 +106,6 @@ function validarPin() {
         resultado.innerText = `✅ ¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
         aplicarEstilosBase('white'); 
 
-        // Cierra el modal del club solo si tiene éxito
         setTimeout(() => {
             cerrarModal('clubModal'); 
         }, 1500); 
@@ -135,6 +134,37 @@ function configurarModal7Pilares() {
     }
 }
 
+function animarYBuscar() {
+    const boton = document.getElementById('botonBing');
+    const formulario = document.getElementById('bingForm');
+    const input = formulario.querySelector('.input-busqueda');
+
+    if (input.value.trim() === "") {
+        input.focus();
+        return;
+    }
+
+    boton.classList.add('elevando');
+
+    setTimeout(() => {
+        boton.classList.remove('elevando');
+        
+        formulario.action = "https://www.bing.com/search";
+        formulario.method = "get";
+        formulario.submit();
+
+    }, 3000);
+}
+
+
+function limpiarBuscador() {
+    const inputBuscador = document.querySelector('.input-busqueda');
+    if (inputBuscador) {
+        inputBuscador.value = "";
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     
     const anuncio = document.getElementById('anuncioModal');
@@ -153,6 +183,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     configurarModal7Pilares();
+    
+    limpiarBuscador();
+
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            limpiarBuscador();
+        }
+    });
 });
 
 document.addEventListener('contextmenu', function(e) {
@@ -161,7 +199,6 @@ document.addEventListener('contextmenu', function(e) {
 
 
 document.addEventListener('keydown', function(e) {
-
     if (e.key === 'F12') {
         e.preventDefault();
     }
@@ -176,47 +213,3 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-
-function limpiarBuscador() {
-    const inputBuscador = document.querySelector('.input-busqueda');
-    if (inputBuscador) {
-        inputBuscador.value = "";
-    }
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    configurarModal7Pilares(); 
-    
-    limpiarBuscador();
-
-    window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            limpiarBuscador();
-        }
-    });
-    
-});
-
-function animarYBuscar() {
-    const boton = document.getElementById('botonBing');
-    const formulario = document.getElementById('bingForm');
-    const input = formulario.querySelector('.input-busqueda');
-
-    if (input.value.trim() === "") {
-        input.focus();
-        return;
-    }
-
-    boton.classList.add('elevando');
-
-    setTimeout(() => {
-        boton.classList.remove('elevando');
-
-        formulario.action = "https://www.bing.com/search";
-        formulario.method = "get";
-        formulario.submit();
-
-    }, 3000);
-}
