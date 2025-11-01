@@ -103,7 +103,7 @@ function validarPin() {
 
     if (estudiantesClub.hasOwnProperty(pin)) {
         const estudiante = estudiantesClub[pin];
-        resultado.innerText = `✅ ¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
+        resultado.innerText = `¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
         aplicarEstilosBase('white'); 
 
         setTimeout(() => {
@@ -111,8 +111,8 @@ function validarPin() {
         }, 1500); 
 
     } else {
-        resultado.innerText = "❌ PIN incorrecto. Acceso denegado. Inténtalo de nuevo.";
-        aplicarEstilosBase('red');
+        resultado.innerText = "❌ VERFIQUE SU PIN ❌";
+        aplicarEstilosBase('white');
     }
 }
 
@@ -213,3 +213,4 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
+
