@@ -67,7 +67,7 @@ function validarFormulario() {
     const dia = document.getElementById("diaNacimiento").value.padStart(2, '0');
 
     const codigo = `${nombre[0] || 'X'}${apellido[0] || 'X'}-${mes}${dia}-${Math.floor(Math.random() * 900 + 100)}`;
-    alert(`Formulario enviado correctamente.\nTu código estudiantil es: ${codigo}`);
+    alert(`Formulario enviado correctamente. Tu código estudiantil es: ${codigo}`);
 
     cerrarModal("formularioModal");
     return false;
@@ -80,39 +80,41 @@ function validarPin() {
 
     const aplicarEstilosBase = (color) => {
         resultado.style.color = color;
-        resultado.style.padding = '1vh';
+        resultado.style.padding = '2vh';
         resultado.style.backgroundColor = 'transparent';
         resultado.style.border = 'none';
         resultado.style.borderRadius = '0';
+        resultado.style.textAlign = "center";
+        resultado.style.display = "flex";
+        resultado.style.margin = "auto";
+    };
+
+    const estudiantesClub = {
+        "242632426311": { nombre: "Ana", apellido: "Rojas" },
+        "132150000000": { nombre: "Juan", apellido: "Perez" },
+        "110411041104": { nombre: "María", apellido: "Gómez" },
     };
 
     if (pin.length !== 12) {
-        resultado.innerText = "❌ El PIN debe tener exactamente 12 dígitos.";
-
-        aplicarEstilosBase('#051020');
+        resultado.innerText = "❌ PIN INCORRECTO ❌";
+        aplicarEstilosBase('white');
         return;
     }
 
     if (estudiantesClub.hasOwnProperty(pin)) {
         const estudiante = estudiantesClub[pin];
-        resultado.innerText = `✅ ¡Bienvenido ${estudiante.nombre} ${estudiante.apellido}! Acceso concedido al Club.`;
-        aplicarEstilosBase('green');
+        resultado.innerText = `✅ ¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
+        aplicarEstilosBase('white'); 
 
+        // Cierra el modal del club solo si tiene éxito
+        setTimeout(() => {
+            cerrarModal('clubModal'); 
+        }, 1500); 
 
     } else {
         resultado.innerText = "❌ PIN incorrecto. Acceso denegado. Inténtalo de nuevo.";
         aplicarEstilosBase('red');
     }
-}
-
-const estudiantesClub = {
-    "24263242631": { nombre: "ZXC", apellido: "VBN" },
-    "13215": { nombre: "QWE", apellido: "RTY" },
-    "1104": { nombre: "ASD", apellido: "FGH" },
-};
-
-function mostrarBotonClub() {
-    document.getElementById("seccionClubes").classList.remove("oculto");
 }
 
 function configurarModal7Pilares() {
@@ -175,7 +177,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-
 function limpiarBuscador() {
     const inputBuscador = document.querySelector('.input-busqueda');
     if (inputBuscador) {
@@ -197,5 +198,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
-
-
