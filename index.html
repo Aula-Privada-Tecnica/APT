@@ -10,7 +10,7 @@
 <header class="encabezado">
   <button class="menu-btn" id="menuToggle" onclick="toggleMenu()">☰</button>
   <div class="titulo-contenedor">
-    <h1 class="titulo" style="font-size: 90%;">Aula Privada Técnica</h1>
+    <h1 class="titulo" style="font-size: 89%;">Aula Privada Técnica</h1>
     <img src="logoretro2.png" alt="Logo APT" class="logo-apt" />
   </div>
 </header>
@@ -271,16 +271,17 @@
   </div>
 </div>
 <section class="buscador-rapido">
-    <h2 class="titulo-buscador">Busca algo útil antes de empezar:</h2>
+    <h2 class="titulo-buscador">Microsoft Bing</h2>
     <form action="https://www.bing.com/search" method="get" target="_blank" class="formulario-busqueda">
-        <input type="text" name="q" placeholder="Buscar en Bing..." class="input-busqueda" required>
-        <button type="submit" class="boton-busqueda">🔍</button>
+        <input type="text" name="q" placeholder="Buscar en Microsoft Bing..." class="input-busqueda" required>
+        <button type="submit" class="boton-busqueda"> <img src="png-transparent-bing-hd-logo.png" style="width: 60%; display: flex; margin: auto;" /></button>
     </form>
     <p class="nota-buscador">Accede a información relevante al instante.</p>
 </section>
 <div class="seccion-boton">
     <button id="abrirBloquesBtn" class="boton-formulario">
-      PILARES | APT
+      <img src="logoretro2.png" class="imagen-club2" />
+      Acceder a los pilares APT
     </button>
 </div>
 <div id="bloquesAlternadosModal" class="modal oculto">
@@ -345,18 +346,49 @@
         <button id="cerrarBloquesBtn" class="cerrar-btn" style="margin-top: 4vh; background-color: #007bff;">
             cerrar
         </button>
-        <img src="comprobado.png" style="width: 20%; padding: 2vh; margin: auto; display: flex;">
+        <img src="comprobado.png" style="width: 20%; padding: 2vh; margin: auto; display: flex;" />
     </div>
 </div>
+<section class="seccion-boton" id="seccionAccesosRapidos"> 
+    <button class="boton-formulario" onclick="abrirModal('enlacesModal')">
+        <img src="logoretro2.png" class="imagen-club2" />
+        Acceder a aulas de paga
+    </button>
+</section>
+
+<div id="enlacesModal" class="modal oculto">
+    <div class="modal-contenido fondo-enlaces animacion-modal">
+        <img src="logoretro2.png" class="imagen-club2" />
+        <h2>APT | DE PAGA</h2>
+        <p>Selecciona la plataforma a la que deseas acceder:</p>
+        <div class="grupo-botones-enlace">
+            
+            <a href="sites.html" target="_blank" class="enlace-btn">
+                <img src="logoretro2.png" class="imagen-club2" />Aula Principiante de Paga
+            </a>
+            
+            <a href="sites.html" target="_blank" class="enlace-btn">
+                <img src="logoretro2.png" class="imagen-club2" />Aula Intermedio de Paga
+            </a>
+            
+            <a href="sites.html" target="_blank" class="enlace-btn">
+                <img src="logoretro2.png" class="imagen-club2" />Aula Avanzada de Paga
+            </a>
+
+        </div>
+        <button class="cerrar-btn" onclick="cerrarModal('enlacesModal')">CERRAR</button>
+    </div>
+</div>
+
 <section class="seccion-clubes" id="seccionClubes">
   <button class="boton-club" onclick="abrirModal('clubModal')">
-    <img src="logoretro.png" alt="Logo Club" class="imagen-club2">
-    Acceder a mi CLUB
+    <img src="logoretro2.png" alt="Logo Club" class="imagen-club2">
+    Acceder a mi aula gratis
   </button>
 </section>
 <div id="clubModal" class="modal-base oculto">
   <div class="contenido-modal fondo-club animacion-modal">
-    <img src="logoretro.png" alt="Logo Club" class="imagen-club">
+    <img src="logoretro2.png" alt="Logo Club" class="imagen-club">
     <h2>Acceder a mi Aula</h2>
     <p>Ingresa tu PIN de acceso:</p>
     <input type="text" id="pinClub" maxlength="12" pattern="\\d{12}" inputmode="numeric" required placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
@@ -369,7 +401,7 @@
 </div>
 <section class="seccion-boton">
   <button class="boton-formulario" onclick="abrirModal('formularioModal')">
-    <img src="logoretro.png" alt="Logo Club" class="imagen-club2">Formulario de Registro
+    <img src="logoretro2.png" alt="Logo Club" class="imagen-club2">Formulario de registros
   </button>
 </section>
 <div id="formularioModal" class="modal oculto">
@@ -437,7 +469,6 @@
     <span>📱</span><br><br>
     Por favor, accede desde tu teléfono para continuar.
   </div>
-  <script src="script.js"></script>
 <footer class="pie">
   <button onclick="abrirModal('footerModal1')">Nosotros</button>
   <button onclick="abrirModal('footerModal2')">Contacto</button>
@@ -521,5 +552,6 @@
         <button id="cerrarAnuncio" class="boton-anuncio">Entendido</button>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
