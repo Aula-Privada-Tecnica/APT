@@ -142,7 +142,7 @@ function animarYBuscar() {
     const FORM_ACTION = "https://www.bing.com/search?safesearch=strict";
 
     const palabrasProhibidas = [
-        "porno", "sexo", "desnudo", "violencia", "gore", "armas", "suicidio", "porn", "p0rn", "s3x", "nude", "gay", "anal", "porno gay", "penes", "pene", "vagina", "chimar", "cojer", "masturbar", "chupar", "mamar", "oral", "gime", "cojer"
+        "porno", "sexo", "desnudo", "violencia", "gore", "armas", "suicidio", "porn", "p0rn", "s3x", "nude", "gay", "anal", "porno gay", "penes", "pene", "vagina", "chimar", "cojer", "masturbar", "chupar", "mamar", "oral", "gime", "cojer", "chimando", "penetrando", "culo", "pupusa", "semen", "cemen", "porno latino", "porno latino gay", "gai"
     ];
 
     const textoBusqueda = input.value.trim().toLowerCase();
@@ -230,3 +230,4 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
+
