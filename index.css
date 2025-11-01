@@ -187,6 +187,7 @@ body {
 
 .bloqueo {
   display: none;
+  text-align: center;
 }
 
 @media (min-width: 450px) {
@@ -200,7 +201,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 2.5vh;
+  font-size: 3vh;
   font-weight: bold;
   color: white;
   background-color: #051020;
@@ -209,8 +210,8 @@ body {
  }
 
   .bloqueo span {
-    font-size: 8vh;
-    margin-top: 2vh;
+    font-size: 700%;
+    margin-top: 4vh;
  }
 }
 
@@ -1054,6 +1055,5 @@ body {
 
 .boton-busqueda {
     transform-style: preserve-3d;
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Asegura transiciones suaves */
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
