@@ -198,3 +198,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+
+function animarYBuscar() {
+    const boton = document.getElementById('botonBing');
+    const formulario = document.getElementById('bingForm');
+    const input = formulario.querySelector('.input-busqueda');
+
+    if (input.value.trim() === "") {
+        input.focus();
+        return;
+    }
+
+    boton.classList.add('elevando');
+
+    setTimeout(() => {
+        boton.classList.remove('elevando');
+
+        formulario.action = "https://www.bing.com/search";
+        formulario.method = "get";
+        formulario.submit();
+
+    }, 3000);
+}
