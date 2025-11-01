@@ -103,7 +103,7 @@ function validarPin() {
 
     if (estudiantesClub.hasOwnProperty(pin)) {
         const estudiante = estudiantesClub[pin];
-        resultado.innerText = `✅ ¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
+        resultado.innerText = `¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
         aplicarEstilosBase('white'); 
 
         setTimeout(() => {
