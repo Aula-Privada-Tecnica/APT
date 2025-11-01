@@ -134,19 +134,31 @@ function configurarModal7Pilares() {
     }
 }
 
-// ********** FUNCIÓN ACTUALIZADA: Con SafeSearch Estricto **********
 function animarYBuscar() {
     const boton = document.getElementById('botonBing');
     const formulario = document.getElementById('bingForm');
     const input = formulario.querySelector('.input-busqueda');
 
-    // ** Lógica de SafeSearch Estricto **
-    // Agregamos 'safesearch=strict' a la URL para forzar el filtro de contenido
     const FORM_ACTION = "https://www.bing.com/search?safesearch=strict";
 
-    if (input.value.trim() === "") {
+    const palabrasProhibidas = [
+        "porno", "sexo", "desnudo", "violencia", "gore", "armas", "suicidio", "porn", "p0rn", "s3x", "nude", "gay", "anal", "porno gay", "penes", "pene", "vagina", "chimar", "cojer", "masturbar", "chupar", "mamar", "oral", "gime", "cojer"
+    ];
+
+    const textoBusqueda = input.value.trim().toLowerCase();
+
+    if (textoBusqueda === "") {
         input.focus();
         return;
+    }
+    
+    for (const palabra of palabrasProhibidas) {
+        if (textoBusqueda.includes(palabra)) {
+            alert("❌ Búsqueda Bloqueada: El término ingresado no está permitido por nuestras políticas de seguridad. Mantengamos un ambiente sano ❌");
+            input.value = "";
+            input.focus();
+            return;
+        }
     }
 
     boton.classList.add('elevando');
@@ -154,7 +166,6 @@ function animarYBuscar() {
     setTimeout(() => {
         boton.classList.remove('elevando');
         
-        // Usamos la variable FORM_ACTION que incluye el filtro
         formulario.action = FORM_ACTION;
         formulario.method = "get";
         formulario.submit();
