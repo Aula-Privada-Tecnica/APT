@@ -103,7 +103,7 @@ function validarPin() {
 
     if (estudiantesClub.hasOwnProperty(pin)) {
         const estudiante = estudiantesClub[pin];
-        resultado.innerText = `¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
+        resultado.innerText = `✅ ¡Bienvenido/a ${estudiante.nombre} ${estudiante.apellido} tu acceso ha sido admitido.`;
         aplicarEstilosBase('white'); 
 
         setTimeout(() => {
@@ -134,10 +134,15 @@ function configurarModal7Pilares() {
     }
 }
 
+// ********** FUNCIÓN ACTUALIZADA: Con SafeSearch Estricto **********
 function animarYBuscar() {
     const boton = document.getElementById('botonBing');
     const formulario = document.getElementById('bingForm');
     const input = formulario.querySelector('.input-busqueda');
+
+    // ** Lógica de SafeSearch Estricto **
+    // Agregamos 'safesearch=strict' a la URL para forzar el filtro de contenido
+    const FORM_ACTION = "https://www.bing.com/search?safesearch=strict";
 
     if (input.value.trim() === "") {
         input.focus();
@@ -149,7 +154,8 @@ function animarYBuscar() {
     setTimeout(() => {
         boton.classList.remove('elevando');
         
-        formulario.action = "https://www.bing.com/search";
+        // Usamos la variable FORM_ACTION que incluye el filtro
+        formulario.action = FORM_ACTION;
         formulario.method = "get";
         formulario.submit();
 
@@ -213,4 +219,3 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-
