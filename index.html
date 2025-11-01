@@ -272,9 +272,12 @@
 </div>
 <section class="buscador-rapido">
     <h2 class="titulo-buscador">Microsoft Bing</h2>
-    <form action="https://www.bing.com/search" method="get" target="_blank" class="formulario-busqueda">
+    <form id="bingForm" target="_blank" class="formulario-busqueda">
         <input type="text" name="q" placeholder="Buscar en Microsoft Bing..." class="input-busqueda" required>
-        <button type="submit" class="boton-busqueda"> <img src="png-transparent-bing-hd-logo.png" style="width: 60%; display: flex; margin: auto;" /></button>
+        
+        <button type="button" class="boton-busqueda" id="botonBing" onclick="animarYBuscar()"> 
+            <img src="png-transparent-bing-hd-logo.png" style="width: 45%; display: flex; margin: auto;" />
+        </button>
     </form>
     <p class="nota-buscador">Accede a información relevante al instante.</p>
 </section>
@@ -363,15 +366,15 @@
         <p>Selecciona la plataforma a la que deseas acceder:</p>
         <div class="grupo-botones-enlace">
             
-            <a href="sites.html" target="_blank" class="enlace-btn">
+            <a href="javascript:void(0)" class="enlace-btn enlace-deshabilitado" target="_blank" class="enlace-btn">
                 <img src="logoretro2.png" class="imagen-club2" />Aula Principiante de Paga
             </a>
             
-            <a href="sites.html" target="_blank" class="enlace-btn">
+            <a href="javascript:void(0)" class="enlace-btn enlace-deshabilitado" target="_blank" class="enlace-btn">
                 <img src="logoretro2.png" class="imagen-club2" />Aula Intermedio de Paga
             </a>
             
-            <a href="sites.html" target="_blank" class="enlace-btn">
+            <a href="javascript:void(0)" class="enlace-btn enlace-deshabilitado" target="_blank" class="enlace-btn">
                 <img src="logoretro2.png" class="imagen-club2" />Aula Avanzada de Paga
             </a>
 
