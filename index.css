@@ -1039,3 +1039,20 @@ body {
     opacity: 0.5;
     pointer-events: none;
 }
+
+@keyframes elevar {
+    0% { transform: translateY(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+    
+    50% { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); } 
+    
+    100% { transform: translateY(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
+.boton-busqueda.elevando {
+    animation: elevar 3s ease-in-out forwards; 
+}
+
+.boton-busqueda {
+    transform-style: preserve-3d;
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Asegura transiciones suaves */
+}
