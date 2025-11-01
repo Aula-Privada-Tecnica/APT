@@ -74,10 +74,6 @@ body {
   text-decoration: none;
 }
 
-.oculto {
-  display: none;
-}
-
 .menu-btn {
   font-size: 3vh;
   background: none;
@@ -352,6 +348,7 @@ body {
   gap: 1vh;
   background-color: #05102000;
   padding: 1vh;
+  margin-top: 4vh;
 }
 
 .pie button {
@@ -443,39 +440,37 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1vh;
-    margin: 2vh;
+    margin: 0;
 }
 
 .boton-formulario {
-    background-color: white;
-    color: #051020;
+    background-color: #051020;
+    color: white;
     border: none;
-    padding: 1vh;
+    padding: 2vh;
     border-radius: 8px;
     font-size: 1.5vh;
     font-weight: bold;
     cursor: pointer;
-    margin: auto;
+    margin: 0;
+    width: 70%;
     transition: background-color 0.2s ease, transform 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px #051020;
     transition: all 0.3s ease;
 }
 
 .boton-formulario:active {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px #051020;
 }
 
 .boton-formulario:hover {
-  background-color: white;
+  background-color: #051020;
   transform: scale(1.03);
   box-shadow: 0 12px 25px #051020;
   transform: translateY(-7px);
 }
 
-.oculto {
-  display: none;
-}
 
 .modal-contenido.fondo-formulario {
   background-color: #051020;
@@ -735,32 +730,32 @@ body {
 .seccion-clubes {
   display: flex;
   justify-content: center;
-  padding: 5vh 0;
+  padding: 1vh;
 }
 
 .boton-club {
-  background-color: white;
-  color: #051020;
+  background-color: #051020;
+  color: white;
   border: none;
-  padding: 1vh;
+  padding: 2vh;
   border-radius: 1vh;
   font-size: 1.5vh;
   font-weight: bold;
   cursor: pointer;
-  margin-top: -3vh;
+  width: 70%;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px #051020;
 }
 
 .boton-club:hover {
-  background-color: white;
+  background-color: #051020;
   box-shadow: 0 12px 25px #051020;
   transform: scale(1.05);
 }
 
 .boton-club:active {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px #051020;
 }
 
 .botones-club {
@@ -829,12 +824,12 @@ body {
 }
 
 .contenido-modal {
-  background: white;
-  color: #051020;
+  background: #051020;
+  color: white;
   border: 1px solid #007bff;
   padding: 20px;
   border-radius: 10px;
-  max-width: 90%;
+  max-width: 60%;
   max-height: 90%;
   overflow-y: auto;
   animation: fadeIn 0.4s ease-in-out;
@@ -924,14 +919,15 @@ body {
 }
 
 .titulo-buscador {
-  color: goldenrod;
+  color: white;
   font-size: 2vh;
+  padding: 0;
 }
 
 .formulario-busqueda {
   display: flex;
   justify-content: center;
-  max-width: 400px;
+  max-width: 900px;
   margin: 0 auto;
   border: 2px solid #007bff;
   border-radius: 8px;
@@ -946,6 +942,7 @@ body {
   outline: none;
   background-color: #102030;
   color: white;
+  width: 900%;
 }
 
 .input-busqueda::placeholder {
@@ -953,17 +950,13 @@ body {
 }
 
 .boton-busqueda {
-  background-color: #007bff;
+  background-color: #051020;
   color: white;
-  padding: 1.5vh 2vh;
+  padding: 0;
   border: none;
   cursor: pointer;
   font-size: 2vh;
   transition: background-color 0.2s ease;
-}
-
-.boton-busqueda:hover {
-  background-color: #0056b3;
 }
 
 .nota-buscador {
@@ -972,3 +965,60 @@ body {
   margin-top: 1.5vh;
 }
 
+.modal-contenido.fondo-enlaces {
+    background-color: #051020;
+    color: white;
+    padding: 3vh;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #007bff;
+}
+
+.modal-contenido.fondo-enlaces h2 {
+    color: #007bff;
+}
+
+.modal-contenido.fondo-enlaces p {
+    font-size: 1.5vh;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.grupo-botones-enlace {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin: 3vh 0;
+}
+
+.enlace-btn {
+    text-decoration: none;
+    padding: 1.5vh;
+    background-color: #051020;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.5vh;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.enlace-btn:hover {
+    background-color: #051020;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+}
+
+.enlace-btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido.fondo-enlaces .cerrar-btn {
+    background-color: #e74c3c;
+    width: 100%;
+    padding: 1vh;
+    margin-top: 2vh;
+}
